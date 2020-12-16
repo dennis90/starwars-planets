@@ -44,9 +44,9 @@ export default function Filters() {
   };
 
   return (
-    <div>
+    <div className="filter-container">
       <div>
-        <div>
+        <div className="field">
           <label htmlFor="name-filter">
             Name filter
           </label>
@@ -59,67 +59,73 @@ export default function Filters() {
           />
         </div>
 
-        <form onSubmit={appendFilterSubmitHandler}>
-          <label htmlFor="numeric-filters">
-            Numeric filters
-          </label>
+        <form onSubmit={appendFilterSubmitHandler} className="numeric-filters-container">
+          <div className="field">
+            <label htmlFor="numeric-filters">
+              Numeric filters
+            </label>
 
-          <select
-            id="numeric-filters"
-            value={numericFilter.column}
-            onChange={(e) => setNumericFilter({ ...numericFilter, column: e.target.value })}
-            required={true}
-          >
-            <option value=""></option>
-            {cleanedNumericFields.map((field) =>
-              <option key={field} value={field}>{field}</option>
-            )}
-          </select>
+            <select
+              id="numeric-filters"
+              value={numericFilter.column}
+              onChange={(e) => setNumericFilter({ ...numericFilter, column: e.target.value })}
+              required={true}
+            >
+              <option value=""></option>
+              {cleanedNumericFields.map((field) =>
+                <option key={field} value={field}>{field}</option>
+              )}
+            </select>
+          </div>
 
-          <label htmlFor="numeric-filter-comparison">
-            Filter
-          </label>
+          <div className="field">
+            <label htmlFor="numeric-filter-comparison">
+              Filter
+            </label>
 
-          <select
-            id="numeric-filter-comparison"
-            value={numericFilter.comparison}
-            onChange={(e) => setNumericFilter({ ...numericFilter, comparison: e.target.value })}
-            required={true}
-          >
-            <option value=""></option>
+            <select
+              id="numeric-filter-comparison"
+              value={numericFilter.comparison}
+              onChange={(e) => setNumericFilter({ ...numericFilter, comparison: e.target.value })}
+              required={true}
+            >
+              <option value=""></option>
 
-            <option value={FilterTypes.greaterThan}>
-              Greater than
-            </option>
+              <option value={FilterTypes.greaterThan}>
+                Greater than
+              </option>
 
-            <option value={FilterTypes.greaterThanOrEqual}>
-              Greater than or equal
-            </option>
+              <option value={FilterTypes.greaterThanOrEqual}>
+                Greater than or equal
+              </option>
 
-            <option value={FilterTypes.lessThan}>
-              Less than
-            </option>
+              <option value={FilterTypes.lessThan}>
+                Less than
+              </option>
 
-            <option value={FilterTypes.lessThanOrEqual}>
-              Less than or equal
-            </option>
+              <option value={FilterTypes.lessThanOrEqual}>
+                Less than or equal
+              </option>
 
-            <option value={FilterTypes.equal}>
-              Equal
-            </option>
-          </select>
+              <option value={FilterTypes.equal}>
+                Equal
+              </option>
+            </select>
+          </div>
 
-          <label htmlFor="numeric-filter-value">
-            Value
-          </label>
+          <div className="field">
+            <label htmlFor="numeric-filter-value">
+              Value
+            </label>
 
-          <input
-            type="text"
-            id="numeric-filter-value"
-            value={numericFilter.value}
-            onChange={(e) => setNumericFilter({ ...numericFilter, value: e.target.value })}
-            required={true}
-          />
+            <input
+              type="text"
+              id="numeric-filter-value"
+              value={numericFilter.value}
+              onChange={(e) => setNumericFilter({ ...numericFilter, value: e.target.value })}
+              required={true}
+            />
+          </div>
 
           <button type="submit">
             Add

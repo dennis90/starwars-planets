@@ -1,16 +1,76 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1.4rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+label {
+  font-weight: 600;
 }
 
-* {
+input, select {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid #000;
   box-sizing: border-box;
+  height: 30px;
+}
+
+.filter-card {
+  padding: 10px;
+  background: #d1d1d1;
+  border: 1px solid #000;
+  border-radius: 2px;
+  display: flex;
+  margin: 20px;
+}
+
+.filter-card button {
+  margin: 0 10px 0 0;
+}
+
+.filter-container {
+  background-color: #f1f1f1;
+  border-radius: 2px;
+  border: 1px solid #d1d1d1;
+  margin: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin: 10px;
+}
+
+.numeric-filters-container {
+  display: flex;
+}
+
+.numeric-filters-container button {
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: auto 0 10px;
+  min-width: 180px;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 30px;
+}
+
+.planets-table-container {
+  border-radius: 2px;
+  border: 1px solid #000;
+  display: flex;
+  margin: 20px;
+  overflow-y: auto;
+}
+
+.planets-table-container table {
+  flex: 1;
 }

@@ -11,16 +11,18 @@ export default function NumericFilter({ filter }) {
   };
 
   return (
-    <div>
+    <div className="filter-card">
       <button onClick={closeButtonClickHandler}>
         X
       </button>
 
-      <ul>
-        <li>{filter.column}</li>
-        <li>{filter.comparison}</li>
-        <li>{filter.value}</li>
-      </ul>
+      <div>
+        {filter.column}
+        &nbsp;
+        {filter.comparison}
+        &nbsp;
+        {filter.value}
+      </div>
     </div>
   );
 }
